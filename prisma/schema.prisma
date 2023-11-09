@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+    url          = env("DATABASE_URL")
+    relationMode = "prisma"
+}
+
+model User {
+    id                   Int       @id @unique @default(autoincrement())
+    first_name           String?   @map(name: "first_name") @db.VarChar(255)
+    last_name            String?   @map(name: "last_name") @db.VarChar(255)
+    profile_pic          String?   @map(name: "profile_pic") @db.VarChar(255)
+    email                String    @unique @db.VarChar(255)
+    phone                String?   @db.VarChar(20) // Assuming phone is a string
+    password_hash        String    @map(name: "password_hash")
+    is_admin             Boolean   @default(false) @map(name: "is_admin")
+}
