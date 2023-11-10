@@ -17,5 +17,87 @@ model User {
     email                String    @unique @db.VarChar(255)
     phone                String?   @db.VarChar(20) // Assuming phone is a string
     password_hash        String    @map(name: "password_hash")
-    is_admin             Boolean   @default(false) @map(name: "is_admin")
+    user_role    UserRole @default(MECHANIC)
+}
+
+enum UserRole {
+  MECHANIC
+  SUPPLIER
+  ADMIN
+}
+
+model Parts {
+  part_id           Int      @id @default(autoincrement())
+  part_name         String
+  part_number       String
+  description       String
+  category          String
+  quantity_in_stock Int
+  reorder_threshold Int
+  unit_price        Float
+}
+
+model Suppliers {
+  supplier_id      Int      @id @default(autoincrement())
+  supplier_name    String
+  contact_name     String
+  contact_email    String
+  contact_phone    String
+}
+
+model PurchaseOrders {
+  order_id              Int        @id @default(autoincrement())
+  supplier_id           Int
+  order_date            DateTime
+  expected_delivery_date DateTime
+  status                String
+  total_cost            Float
+}
+
+model OrderItems {
+  order_item_id Int      @id @default(autoincrement())
+  order_id      Int
+  part_id       Int
+  quantity_ordered Int
+  unit_price    Float
+}
+
+model SalesOrders {
+  order_id       Int      @id @default(autoincrement())
+  customer_name  String
+  order_date     DateTime
+  status         String
+  total_price    Float
+}
+
+model SalesOrderItems {
+  order_item_id Int      @id @default(autoincrement())
+  order_id      Int
+  part_id       Int
+  quantity_sold Int
+  unit_price    Float
+}
+
+model Customers {
+  customer_id   Int      @id @default(autoincrement())
+  customer_name String
+  customer_email String
+  customer_phone String
+}
+
+model InventoryTransactions {
+  transaction_id     Int      @id @default(autoincrement())
+  part_id            Int
+  quantity_change    Int
+  transaction_date   DateTime
+  transaction_type   String
+  related_order_id   Int?
+}
+
+model Adjustments {
+  adjustment_id     Int      @id @default(autoincrement())
+  part_id           Int
+  adjustment_reason String
+  quantity_change   Int
+  adjustment_date   DateTime
 }

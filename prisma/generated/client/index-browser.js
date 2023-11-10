@@ -113,7 +113,83 @@ exports.Prisma.UserScalarFieldEnum = {
   email: 'email',
   phone: 'phone',
   password_hash: 'password_hash',
-  is_admin: 'is_admin'
+  user_role: 'user_role'
+};
+
+exports.Prisma.PartsScalarFieldEnum = {
+  part_id: 'part_id',
+  part_name: 'part_name',
+  part_number: 'part_number',
+  description: 'description',
+  category: 'category',
+  quantity_in_stock: 'quantity_in_stock',
+  reorder_threshold: 'reorder_threshold',
+  unit_price: 'unit_price'
+};
+
+exports.Prisma.SuppliersScalarFieldEnum = {
+  supplier_id: 'supplier_id',
+  supplier_name: 'supplier_name',
+  contact_name: 'contact_name',
+  contact_email: 'contact_email',
+  contact_phone: 'contact_phone'
+};
+
+exports.Prisma.PurchaseOrdersScalarFieldEnum = {
+  order_id: 'order_id',
+  supplier_id: 'supplier_id',
+  order_date: 'order_date',
+  expected_delivery_date: 'expected_delivery_date',
+  status: 'status',
+  total_cost: 'total_cost'
+};
+
+exports.Prisma.OrderItemsScalarFieldEnum = {
+  order_item_id: 'order_item_id',
+  order_id: 'order_id',
+  part_id: 'part_id',
+  quantity_ordered: 'quantity_ordered',
+  unit_price: 'unit_price'
+};
+
+exports.Prisma.SalesOrdersScalarFieldEnum = {
+  order_id: 'order_id',
+  customer_name: 'customer_name',
+  order_date: 'order_date',
+  status: 'status',
+  total_price: 'total_price'
+};
+
+exports.Prisma.SalesOrderItemsScalarFieldEnum = {
+  order_item_id: 'order_item_id',
+  order_id: 'order_id',
+  part_id: 'part_id',
+  quantity_sold: 'quantity_sold',
+  unit_price: 'unit_price'
+};
+
+exports.Prisma.CustomersScalarFieldEnum = {
+  customer_id: 'customer_id',
+  customer_name: 'customer_name',
+  customer_email: 'customer_email',
+  customer_phone: 'customer_phone'
+};
+
+exports.Prisma.InventoryTransactionsScalarFieldEnum = {
+  transaction_id: 'transaction_id',
+  part_id: 'part_id',
+  quantity_change: 'quantity_change',
+  transaction_date: 'transaction_date',
+  transaction_type: 'transaction_type',
+  related_order_id: 'related_order_id'
+};
+
+exports.Prisma.AdjustmentsScalarFieldEnum = {
+  adjustment_id: 'adjustment_id',
+  part_id: 'part_id',
+  adjustment_reason: 'adjustment_reason',
+  quantity_change: 'quantity_change',
+  adjustment_date: 'adjustment_date'
 };
 
 exports.Prisma.SortOrder = {
@@ -130,10 +206,23 @@ exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
 };
-
+exports.UserRole = {
+  MECHANIC: 'MECHANIC',
+  SUPPLIER: 'SUPPLIER',
+  ADMIN: 'ADMIN'
+};
 
 exports.Prisma.ModelName = {
-  User: 'User'
+  User: 'User',
+  Parts: 'Parts',
+  Suppliers: 'Suppliers',
+  PurchaseOrders: 'PurchaseOrders',
+  OrderItems: 'OrderItems',
+  SalesOrders: 'SalesOrders',
+  SalesOrderItems: 'SalesOrderItems',
+  Customers: 'Customers',
+  InventoryTransactions: 'InventoryTransactions',
+  Adjustments: 'Adjustments'
 };
 
 /**
