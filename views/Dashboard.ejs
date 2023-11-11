@@ -5,18 +5,146 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
-  <link rel="stylesheet" href="/public/styles/main.css">
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/bootstrap.min.css">
+  <script src="/js/jquery-3.7.1.min.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <div id="sidebar">
-    <ul>
-      <li><a href="/">Dashboard</a></li>
-      <li><a href="/page1">Page 1</a></li>
-      <li><a href="/page2">Page 2</a></li>
+  
+
+
+  <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+      <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-5 fw-semibold">Auto-Craft System</span>
+    </a>
+    <ul class="list-unstyled ps-0">
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+          Inventory
+        </button>
+        <div class="collapse show" id="home-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded"> Overview</a></li>
+            <li><a href="#" class="link-dark rounded">Add new Part</a></li>
+            <li><a href="#" class="link-dark rounded">Part listing</a></li>
+            <li><a href="#" class="link-dark rounded">Part compatibilty checker</a></li>
+            <li><a href="#" class="link-dark rounded">Asset Management</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+          Purchase Orders
+        </button>
+        <div class="collapse" id="dashboard-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">Overview</a></li>
+            <li><a href="#" class="link-dark rounded">Add a purchase order</a></li>
+            <li><a href="#" class="link-dark rounded">Track order status</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+          Sales Orders
+        </button>
+        <div class="collapse" id="orders-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">Overview</a></li>
+            <li><a href="#" class="link-dark rounded">Add a sale order</a></li>
+            <li><a href="#" class="link-dark rounded">Track order status</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+          Suppliers
+        </button>
+        <div class="collapse" id="orders-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">Overview</a></li>
+            <li><a href="#" class="link-dark rounded">Add new supplier</a></li>
+            <li><a href="#" class="link-dark rounded">Track supplier performance</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+          Customer
+        </button>
+        <div class="collapse" id="orders-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">Overview</a></li>
+            <li><a href="#" class="link-dark rounded">Add new Customer</a></li>
+            <li><a href="#" class="link-dark rounded">Track customer interactions</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+          Inventory Transactions
+        </button>
+        <div class="collapse" id="orders-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">Overview</a></li>
+            <li><a href="#" class="link-dark rounded">Track stock movements</a></li>
+            <li><a href="#" class="link-dark rounded">Stock changes</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+          Adjustments
+        </button>
+        <div class="collapse" id="orders-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">Overview</a></li>
+            <li><a href="#" class="link-dark rounded">Add new adjustments</a></li>
+            <li><a href="#" class="link-dark rounded">Track adjustments</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+          User Management
+        </button>
+        <div class="collapse" id="orders-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">Add new users</a></li>
+            <li><a href="#" class="link-dark rounded">Manage user roles</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+          Reports and Analysis
+        </button>
+        <div class="collapse" id="orders-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">Purchase and Sales trends</a></li>
+            <li><a href="#" class="link-dark rounded">data Graph</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="border-top my-3"></li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+          Account
+        </button>
+        <div class="collapse" id="account-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">Profile</a></li>
+            <li><a href="#" class="link-dark rounded">log out</a></li>
+          </ul>
+        </div>
+      </li>
     </ul>
   </div>
-  <div id="content">
-    <h1>Welcome to the Dashboard!</h1>
-  </div>
+
+  
+  
 </body>
 </html>
